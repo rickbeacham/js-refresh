@@ -243,3 +243,54 @@ const student1 = new Student("Berry", "Does", "5-23-1982");
 console.log(student1);
 
 // DOM //
+// window parent object of browser.
+console.log(window);
+
+// single element
+console.log(document.getElementById("my-form"));
+console.log(document.querySelector("h1"));
+console.log(document.querySelectorAll(".item"));
+console.log(document.getElementsByClassName("item"));
+console.log(document.getElementsByTagName("li"));
+
+const items = document.querySelectorAll(".item");
+
+items.forEach(item => console.log(item));
+
+const ul = document.querySelector(".items");
+
+//ul.remove();
+//ul.lastElementChild.remove();
+//ul.firstElementChild.textContent = "Yo. What up? ";
+//ul.children[2].innerText = "Rick";
+//ul.lastElementChild.innerHTML = "<h1>Yo!!</h2>";
+
+//const btn = document.querySelector(".btn");
+//btn.style.background = "purple";
+/*
+const btn = document.querySelector(".btn");
+btn.addEventListener("mouseout", e => {
+  e.preventDefault();
+  //console.log("click");
+  //console.log(e.target.id);
+  document.querySelector("#my-form").style.background = "#d1d1";
+  document.querySelector("body").classList.add("bg-dark");
+  document.querySelector(".items").lastElementChild.innerHTML =
+    "<h1>Hello</h1>";
+});
+*/
+const myForm = document.querySelector("#my-form");
+const nameInput = document.querySelector("#name");
+const emailInput = document.querySelector("#email");
+const msg = document.querySelector(".msg");
+const userList = document.querySelector("#users");
+myForm.addEventListener("submit", onSubmit);
+
+function onSubmit(e) {
+  e.preventDefault();
+  if (nameInput.vlaue === " " || emailInput.value === " ") {
+    alert("Please enter Fields");
+  } else {
+    console.log("success");
+  }
+}
