@@ -193,3 +193,53 @@ function addN(n1, n2) {
 console.log(addN(3, 4));
 
 // END of BASICS //
+
+// Objects //
+// Constructor
+function Person(firstName, lastName, dob) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.dob = new Date(dob);
+  this.getBirthYear = function() {
+    return this.dob.getFullYear();
+  };
+  this.getFullName = function() {
+    return `${this.firstName} ${this.lastName}`;
+  };
+}
+Person.prototype.getBirthYear = function() {
+  return this.dob.getFullYear();
+};
+Person.prototype.getFullName = function() {
+  return `${this.firstName} ${this.lastName}`;
+};
+
+// Instantiate object
+const person1 = new Person("John", "Doe", "3-1-1982");
+const person2 = new Person("April", "Doe", "1-1-1983");
+
+console.log(person1);
+console.log(person2);
+console.log(person2.dob.getFullYear());
+
+console.log(person1.getBirthYear());
+console.log(person2.getFullName());
+
+// Class
+class Student {
+  constructor(firstname, lastName, dob) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.dob = new Date(dob);
+  }
+  getBirthYear() {
+    return this.dob.getFullYear();
+  }
+  getFullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+}
+const student1 = new Student("Berry", "Does", "5-23-1982");
+console.log(student1);
+
+// DOM //
