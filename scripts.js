@@ -191,3 +191,5 @@ function addN(n1, n2) {
   return n1 + n2;
 }
 console.log(addN(3, 4));
+
+// END of BASICS //
